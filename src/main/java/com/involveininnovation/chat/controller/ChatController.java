@@ -27,9 +27,9 @@ public class ChatController {
 
     @MessageMapping("/private-message")
     public MessageCommand recMessage(@Payload MessageCommand messageCommand) {
-        simpMessagingTemplate.convertAndSendToUser(messageCommand.getReceiverName(), "/private", messageCommand);
+        simpMessagingTemplate.convertAndSendToUser(messageCommand.getReceiver().toString(), "/private", messageCommand);
 
-        messageRepository.save(new Message(messageCommand.getSenderName(), messageCommand.getReceiverName(), messageCommand.getMessage(), messageCommand.getDate(),
+        messageRepository.save(new Message(messageCommand.getSender(), messageCommand.getReceiver(), messageCommand.getMessage(), messageCommand.getDate(),
                                            messageCommand.getStatus()
                                                          .toString()));
         System.out.println(messageCommand.toString());

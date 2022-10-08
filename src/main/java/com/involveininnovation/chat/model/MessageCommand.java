@@ -2,14 +2,16 @@ package com.involveininnovation.chat.model;
 
 import lombok.*;
 
+import java.util.UUID;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
 public class MessageCommand {
-    private String senderName;
-    private String receiverName;
+    private UUID sender;
+    private UUID receiver;
     private String message;
     private Long date;
     private Status status;
