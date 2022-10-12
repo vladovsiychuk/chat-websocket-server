@@ -10,8 +10,8 @@ import java.util.UUID;
 @Setter
 @ToString
 public class MessageCommand {
-    private UUID sender;
-    private UUID receiver;
+    private String sender;
+    private String receiver;
     private String message;
     private Long date;
     private Status status;

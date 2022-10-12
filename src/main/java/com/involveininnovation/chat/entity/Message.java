@@ -15,13 +15,13 @@ public class Message {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-    private UUID sender;
-    private UUID receiver;
+    private String sender;
+    private String receiver;
     private String message;
     private Long date;
     private String status;
 
-    public Message(UUID sender, UUID receiver, String message, Long date, String status) {
+    public Message(String sender, String receiver, String message, Long date, String status) {
         this.sender = sender;
         this.receiver = receiver;
         this.message = message;
