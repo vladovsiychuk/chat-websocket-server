@@ -27,12 +27,12 @@ public class ChatController {
 
     @MessageMapping("/private-message")
     public MessageCommand recMessage(@Payload MessageCommand messageCommand) {
-        simpMessagingTemplate.convertAndSendToUser(messageCommand.getReceiver().toString(), "/private", messageCommand);
+        simpMessagingTemplate.convertAndSendToUser(messageCommand.getReceiver(), "/private", messageCommand);
 
         messageRepository.save(new Message(messageCommand.getSender(), messageCommand.getReceiver(), messageCommand.getMessage(), messageCommand.getDate(),
                                            messageCommand.getStatus()
                                                          .toString()));
-        System.out.println(messageCommand.toString());
+        System.out.println(messageCommand);
         return messageCommand;
     }
 }
