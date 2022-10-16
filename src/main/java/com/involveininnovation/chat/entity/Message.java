@@ -13,7 +13,7 @@ import java.util.UUID;
 @Entity
 public class Message {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String sender;
     private String receiver;
